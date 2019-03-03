@@ -9,8 +9,9 @@ public class Checkingmethods {
 		int random = rand.nextInt(10) + 1;
 
 		sb.append("1");
-		sb.append(Character.forDigit(random,10));
+		sb.append(Character.forDigit(random, 10));
 		System.out.println(sb);
+
 	}
 
 }
