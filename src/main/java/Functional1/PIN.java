@@ -6,26 +6,25 @@ public class PIN {
 
 	private int PIN;
 
-	public int getPIN() {
-		return PIN;
-	}
-
 	public void setPIN(int pIN) {
 		PIN = pIN;
 	}
 
-	public void generatePIN() {
+	public int getPIN() {
+		return PIN;
+	}
+
+	public int generatePIN() {
 		// pin number should be 4 digits
 		// use same writing as in AccountNumber_Generator
 
 		StringBuilder sb = new StringBuilder();
 		Random rand = new Random();
-		int random = rand.nextInt(10) + 1;
 
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
 
 		// checking our new auto generated PIN
 
@@ -36,10 +35,8 @@ public class PIN {
 			// if the generated pin is ok, we change the string to an int and set the PIN
 			setPIN(Integer.parseInt(sb.toString()));
 
-		} else
-			generatePIN();
-		// else, we generate another String
-
+		}
+		return getPIN();
 	}
 
 	public void changePIN(int newPIN) {
