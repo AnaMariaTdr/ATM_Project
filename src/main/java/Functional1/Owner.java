@@ -4,8 +4,25 @@ package Functional1;
 public class Owner {
 	private String firstName;
 	private String lastName;
-	private int PIN;
-	private int accountCurrentSold;
+	private String accNo;
+	private int soldAmount; 
+
+	public String getAccNo() {
+		return accNo;
+	}
+
+	public String setAccNo(String accNo) {
+		return this.accNo = accNo;
+	}
+
+
+	public int getSoldAmount() {
+		return soldAmount;
+	}
+
+	public void setSoldAmount(int soldAmount) {
+		this.soldAmount = soldAmount;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -23,31 +40,15 @@ public class Owner {
 		this.lastName = lastName;
 	}
 
-	public int getPIN() {
-		return PIN;
-	}
-
-	public void setPIN(int pIN) {
-		PIN = pIN;
-	}
-
-	@Override
-	public String toString() {
-		return "Owner [firstName=" + firstName + ", lastName=" + lastName + ", PIN=" + PIN + ", accountCurrentSold="
-				+ accountCurrentSold + "]";
-	}
-
-	public Owner(String firstName, String lastName, int pIN, int accountCurrentSold) {
+	public Owner(String firstName, String lastName, String accNo, int soldAmount) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		PIN = pIN;
-		this.accountCurrentSold = accountCurrentSold;
+		this.accNo = accNo;
+		this.soldAmount = soldAmount;
 	}
-	
 
-	
-	
-	
+
+
 
 }

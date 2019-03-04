@@ -6,7 +6,6 @@ public class AccountNumber_Generator {
 	// this will be used for new customers.
 	// and also to generate initial accounts
 	private String accountNumber;
-	
 
 	public void setAccount(String account) {
 		accountNumber = account;
@@ -16,19 +15,18 @@ public class AccountNumber_Generator {
 		return accountNumber;
 	}
 
-	public void generateAccount() {
+	public String generateAccount() {
 		StringBuilder sb = new StringBuilder();
 		Random rand = new Random();
-		int random = rand.nextInt(10) + 1;
 
 		sb.append("1");
 		// first number in Account should be 1
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
-		sb.append(Character.forDigit(random, 10));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(10) + 1)));
 
 		@SuppressWarnings("unused")
 		boolean check = checkAccountNumber(sb.toString());
@@ -36,8 +34,8 @@ public class AccountNumber_Generator {
 //if the account we created passes the check below, we set the Account
 			setAccount(sb.toString());
 
-		} else
-			generateAccount();
+		}
+		return getAccount();
 	}
 
 	public boolean checkAccountNumber(String Account) {
