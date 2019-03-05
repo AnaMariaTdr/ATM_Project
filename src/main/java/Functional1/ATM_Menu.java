@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ATM_Menu extends ATM {
+public class ATM_Menu extends ATM{
 
 // we create a static map where pe pun the PIN as an integer and the Owner
 	public static Map<Integer, Owner> bankAccount = new HashMap<Integer, Owner>();
@@ -43,7 +43,6 @@ public class ATM_Menu extends ATM {
 
 	int pinFromKeyboard;
 
-	@Override
 	public void start() {
 
 		initiateAccounts();
@@ -84,22 +83,81 @@ public class ATM_Menu extends ATM {
 	public void optionsSwitchStatement() {
 
 		int optionFromKeyboard = sc.nextInt();
+		Owner or = bankAccount.get(pinFromKeyboard);
 
 		switch (optionFromKeyboard) {
 
 		case 1:
-			
-			bankAccount.get(pinFromKeyboard); 
+			System.out.println("The current amount is : " + (or.getSoldAmount()));
 
 			break;
 		case 2:
+			System.out.println("Please enter amount to be deposited");
+			int amountDeposited = sc.nextInt();
+			addDeposit(or, amountDeposited);
 			break;
+
 		case 3:
+
+			System.out.println("Please enter the amount you wish to withdraw");
+			int amountToBeWithdraw = sc.nextInt();
+			removeAmount(or, amountToBeWithdraw);
+
 			break;
 		case 4:
+			System.out.println("Please enter the new PIN");
+			int newPIN = sc.nextInt();
+			PIN pin = new PIN();
+			pin.changePIN(newPIN);
+
 			break;
 
 		default:
+
+			System.out.println("Option selected is not a valid option");
+			System.out.println("If you wish to cancel please type : ' cancel '  ");
+			System.out.println("If you wish to get back to the main menu, please type : ' menu ' ");
+			if (sc.next() == "menu") {
+				optionsSwitchStatement();
+			} else if (sc.next() == "cancel") {
+				stop();
+
+			} else {
+				System.out.println("Your option is not valid. Closing this request");
+				stop();
+			}
+
+		}
+	}
+
+	private void stop() {
+		// TODO Auto-generated method stub
+		System.out.println("Thank you and Have a Great Day ! ");
+
+	}
+
+	private void removeAmount(Owner or, int amountToBeWithdraw) {
+		validatorWithdraw vw = new validatorWithdraw();
+		@SuppressWarnings("unused")
+		boolean check = vw.checkWithdraw(amountToBeWithdraw);
+
+		if ((check = true) && (or.getSoldAmount() > amountToBeWithdraw)) {
+			or.setSoldAmount(amountToBeWithdraw);
+			System.out.println("Amount has been wihdraw");
+
+		} else {
+			System.out.println("Insuficient funds ! ");
+		}
+	}
+
+	private void addDeposit(Owner or, int amountDeposited) {
+		validatorDeposit vd = new validatorDeposit();
+		@SuppressWarnings("unused")
+		boolean check = vd.checkDeposit(amountDeposited);
+		if (check = true) {
+
+			or.setSoldAmount(amountDeposited);
+			System.out.println("Amount has been deposited");
 
 		}
 		sc.close();

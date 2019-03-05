@@ -21,12 +21,13 @@ public class AccountNumber_Generator {
 
 		sb.append("1");
 		// first number in Account should be 1
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
 
 		@SuppressWarnings("unused")
 		boolean check = checkAccountNumber(sb.toString());

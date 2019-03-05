@@ -21,10 +21,10 @@ public class PIN {
 		StringBuilder sb = new StringBuilder();
 		Random rand = new Random();
 
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
-		sb.append(Integer.toString((rand.nextInt(10) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
+		sb.append(Integer.toString((rand.nextInt(9) + 1)));
 
 		// checking our new auto generated PIN
 
