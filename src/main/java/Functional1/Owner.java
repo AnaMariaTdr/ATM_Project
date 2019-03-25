@@ -5,7 +5,7 @@ public class Owner {
 	private String firstName;
 	private String lastName;
 	private String accNo;
-	private int soldAmount; 
+	private int soldAmount;
 
 	public String getAccNo() {
 		return accNo;
@@ -14,7 +14,6 @@ public class Owner {
 	public String setAccNo(String accNo) {
 		return this.accNo = accNo;
 	}
-
 
 	public int getSoldAmount() {
 		return soldAmount;
@@ -48,7 +47,10 @@ public class Owner {
 		this.soldAmount = soldAmount;
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "Owner [firstName=" +  "   " + firstName + "    lastName=" + lastName + "   " + "    accNo=" + accNo + "   "
+				+ "    soldAmount=" + soldAmount + "]";
+	}
 
 }

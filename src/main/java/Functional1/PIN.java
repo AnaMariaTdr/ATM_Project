@@ -53,4 +53,11 @@ public class PIN {
 			System.out.println("Please enter another PIN");
 
 	}
+
+	@Override
+	public String toString() {
+		return "PIN [PIN=" + PIN + "]";
+	}
+	
+	
 }
