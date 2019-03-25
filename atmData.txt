@@ -1,5 +1,5 @@
-{PIN : 3697 - > Owner [firstName=   Ana-Maria    lastName=Tudor       accNo=15838327       soldAmount=0]
- PIN : 1939 - > Owner [firstName=   Florin    lastName=Salam       accNo=19299195       soldAmount=0]
- PIN : 8982 - > Owner [firstName=   Vladimir    lastName=Putin       accNo=16776814       soldAmount=0]
- PIN : 1192 - > Owner [firstName=   Petre    lastName=Ispirescu       accNo=18569515       soldAmount=0]
- PIN : 2858 - > Owner [firstName=   Barack    lastName=Obama       accNo=16889192       soldAmount=0]}
+{PIN : 2947 - > Owner [firstName=   Petre    lastName=Ispirescu       accNo=19198736       soldAmount=0]
+ PIN : 7685 - > Owner [firstName=   Barack    lastName=Obama       accNo=16657366       soldAmount=0]
+ PIN : 7846 - > Owner [firstName=   Florin    lastName=Salam       accNo=18871885       soldAmount=0]
+ PIN : 4775 - > Owner [firstName=   Ana-Maria    lastName=Tudor       accNo=18182584       soldAmount=0]
+ PIN : 8457 - > Owner [firstName=   Vladimir    lastName=Putin       accNo=18752623       soldAmount=0]}

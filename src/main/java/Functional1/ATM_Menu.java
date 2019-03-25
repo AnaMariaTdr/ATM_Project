@@ -26,8 +26,9 @@ public class ATM_Menu extends ATM {
 			if (accounts.getBankAccount().containsKey(i)) {
 // here we assign the object bank account created earlier to the account to which the pin from the keyboard matches
 				pinFromKeyboard = i;
-				continueAfterStart();
+				optionsSwitchStatement();
 
+				System.out.println("Welcome ! ");
 			}
 
 			else {
@@ -38,18 +39,12 @@ public class ATM_Menu extends ATM {
 
 	}
 
-	public void continueAfterStart() {
-		System.out.println("Welcome ! ");
+	public void optionsSwitchStatement() {
 		System.out.println("Please select what would you like to do?");
 		System.out.println("1. Verify current available amount ");
 		System.out.println("2. Deposit amount");
 		System.out.println("3. Withdraw");
 		System.out.println("4. Change PIN");
-
-		optionsSwitchStatement();
-	}
-
-	public void optionsSwitchStatement() {
 
 		int optionFromKeyboard = sc.nextInt();
 		Owner or = accounts.getBankAccount().get(pinFromKeyboard);
@@ -84,32 +79,31 @@ public class ATM_Menu extends ATM {
 		default:
 
 			System.out.println("Option selected is not a valid option");
-			System.out.println("If you wish to cancel please type : ' cancel '  ");
-			System.out.println("If you wish to get back to the main menu, please type : ' menu ' ");
-			if (sc.next() == "menu") {
-				optionsSwitchStatement();
-			} else if (sc.next() == "cancel") {
-				stop();
-
-			} else {
-				System.out.println("Your option is not valid. Closing this request");
-				stop();
-			}
-
+			break;
 		}
+		otherOptions();
+	}
 
-		System.out.println("If you wish to cancel please type : ' cancel '  ");
-		System.out.println("If you wish to get back to the main menu, please type : ' menu ' ");
-		if ((sc.next()).equalsIgnoreCase("menu")) {
+	public void otherOptions() {
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("If you wish to get back to the main menu, please press 1");
+		System.out.println("If you wish to cancel please press 2 ");
+		int optionFromKeyboard = sc1.nextInt();
+
+		switch (optionFromKeyboard) {
+		case 1:
 			optionsSwitchStatement();
-		} else if (sc.next() == "cancel") {
-			stop();
+			break;
 
-		} else {
-			System.out.println("Your option is not valid. Closing this request");
+		case 2:
 			stop();
+			break;
+
+		default:
+			System.out.println("Option is invalid. Canceling this request");
+			break;
 		}
-
+		sc1.close();
 	}
 
 	private void stop() {
